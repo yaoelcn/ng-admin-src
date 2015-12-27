@@ -72,7 +72,7 @@ export default class FormController {
             .then(() => {
                 this.progression.done();
                 this.notification.log('成功保存修改', { addnCls: 'humane-flatty-success' });
-                this.$state.go(this.$state.get('list'));
+                this.$state.go(this.$state.get('list'), { entity: entity.name(), id: entry.identifierValue });
             }, this.handleError.bind(this));
     }
 
