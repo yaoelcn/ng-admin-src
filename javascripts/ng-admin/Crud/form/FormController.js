@@ -55,7 +55,7 @@ export default class FormController {
                 this.progression.done();
                 this.notification.log('创建成功', { addnCls: 'humane-flatty-success' });
                 var entry = view.mapEntry(rawEntry);
-                this.$state.go(this.$state.get(route), { entity: entity.name(), id: entry.identifierValue });
+                this.$state.go(this.$state.get('list'), { entity: entity.name(), id: entry.identifierValue });
             }, this.handleError.bind(this));
     }
 
