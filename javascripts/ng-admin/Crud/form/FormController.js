@@ -64,6 +64,7 @@ export default class FormController {
         if (!this.validateEntry()) {
             return;
         }
+        var entity = this.entity;
         var view = this.view;
         var restEntry = this.$scope.entry.transformToRest(view.fields());
         this.progression.start();
