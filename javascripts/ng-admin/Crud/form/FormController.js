@@ -70,9 +70,10 @@ export default class FormController {
         this.progression.start();
         this.WriteQueries
             .updateOne(view, restEntry, this.originEntityId)
-            .then(() => {
+            .then(rawEntry => {
                 this.progression.done();
                 this.notification.log('成功保存修改', { addnCls: 'humane-flatty-success' });
+                var entry = view.mapEntry(rawEntry);
                 this.$state.go(this.$state.get('list'), { entity: entity.name(), id: entry.identifierValue });
             }, this.handleError.bind(this));
     }
