@@ -29,7 +29,7 @@ export default function maExportToCsvButton ($stateParams, Papa, notification, A
                 var nonOptimizedReferencedData;
                 var optimizedReferencedData;
 
-                ReadQueries.getAll(exportView, -1, $stateParams.search(), $stateParams.sortField, $stateParams.sortDir)
+                ReadQueries.getAll(exportView, -1, $stateParams.search, $stateParams.sortField, $stateParams.sortDir)
                     .then(response => {
                         rawEntries = response.data;
                         return rawEntries;
